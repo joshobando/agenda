@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Work Day Scheduler</title>
 </head>
 
@@ -17,14 +17,79 @@
     <header class="jumbotron">
         <h1 class="display-3">Work Day Scheduler</h1>
         <p class="lead">A simple calendar app for scheduling your work day</p>
-        <p id="currentDay" class="lead"></p>
+        <p id="currentDay" class="lead">
+            <!-- show time -->
+        </p>
     </header>
     <div class="container">
         <!-- Timeblocks go here -->
+        <div data="9" class="row time-block">
+            <div class="col-md-1 hour">
+                9AM
+            </div>
+            <textarea class="col-md-10 text-input"></textarea>
+            <button class="btn save-btn col-md-1">Save</button>
+        </div>
+        <div data="10" class="row time-block">
+            <div class="col-md-1 hour">
+                10AM
+            </div>
+            <textarea class="col-md-10 text-input"></textarea>
+            <button class="btn save-btn col-md-1">Save</button>
+        </div>
+        <div data="11" class="row time-block">
+            <div class="col-md-1 hour">
+                11AM
+            </div>
+            <textarea class="col-md-10 text-input"></textarea>
+            <button class="btn save-btn col-md-1">Save</button>
+        </div>
+        <div data="12" class="row time-block">
+            <div class="col-md-1 hour">
+                12PM
+            </div>
+            <textarea class="col-md-10 text-input"></textarea>
+            <button class="btn save-btn col-md-1">Save</button>
+        </div>
+        <div data="13" class="row time-block">
+            <div class="col-md-1 hour">
+                1PM
+            </div>
+            <textarea class="col-md-10 text-input"></textarea>
+            <button class="btn save-btn col-md-1">Save</button>
+        </div>
+        <div data="14" class="row time-block">
+            <div class="col-md-1 hour">
+                2PM
+            </div>
+            <textarea class="col-md-10 text-input"></textarea>
+            <button class="btn save-btn col-md-1">Save</button>
+        </div>
+        <div data="15" class="row time-block">
+            <div class="col-md-1 hour">
+                3PM
+            </div>
+            <textarea class="col-md-10 text-input"></textarea>
+            <button class="btn save-btn col-md-1">Save</button>
+        </div>
+        <div data="16" class="row time-block">
+            <div class="col-md-1 hour">
+                4PM
+            </div>
+            <textarea class="col-md-10 text-input"></textarea>
+            <button class="btn save-btn col-md-1">Save</button>
+        </div>
+        <div data="17" class="row time-block">
+            <div class="col-md-1 hour">
+                5PM
+            </div>
+            <textarea class="col-md-10 text-input"></textarea>
+            <button class="btn save-btn col-md-1">Save</button>
+        </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/logic.js"></script>
 </body>
 
 </html>
