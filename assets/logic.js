@@ -2,11 +2,15 @@ $(document).ready(function() {
     //*****all code goes here
     const timeBlockArray = $(".time-block");
 
-    // //create history hour-1 hour-2
-    // let history = JSON.parse(localStorage.getItem("histroy")) || [];
-    // $.each(timeBlockArray, (index, timeblock) => {
-    //     $(timeblock).val(history[]);
-    // });
+    //create history hour-1 hour-2
+    let history = JSON.parse(localStorage.getItem("history")) || {};
+    $.each(timeBlockArray, function(index, timeblock) {
+        const dataId = $(timeblock).attr("data");
+        if (history[`${dataId}`]) {
+            const textInput = $(timeblock).find(".text-input");
+            $(textInput).val(history[`${dataId}`]);
+        }
+    });
 
     //show time current time - use momnet js
     $("#currentDay").text(moment().format('dddd, MMMM Do, h:mm:ss a'));
@@ -18,42 +22,28 @@ $(document).ready(function() {
         //get hour data on block
         const hourBlock = $(timeblock).attr("data"); //Number
         //if current hour < data on block add past class
-        console.log("currentHour:",currentHour);
-        console.log("hourBlock:",hourBlock);
         if (currentHour > hourBlock) {
-            console.log("hourBlock: past" );
             $(timeblock).addClass("past");
         }
         //if current hour > data on block add future class
         else if (currentHour < hourBlock) {
-            console.log("hourBlock: future" );
             $(timeblock).addClass("future");
         }
         //otherwise add present class
         else {
-            console.log("hourBlock: present" );
             $(timeblock).addClass("present");
         }
     });
 
     //add save button functionality
     $(".save-btn").on("click", function(event) {
-        const targetParent = $(event.taget).parent(".time-block");
-        const text = $(event.taget).siblings(".text-input");
-        const dataId = $(targetParent).attr("data");
+        const text = $(event.target).siblings(".text-input").val();
+        const dataId = $(event.target).parent().attr("data");
 
+        //construct data for storage
+        history[`${dataId}`] = text;
 
         //set local storage
-        localStorage.setItem(`hour-${dataId}`, text);
+        localStorage.setItem("history", JSON.stringify(history));
     });
-
-    //localstorage - get and set
 });
-
-
-// const createTimeblock = () => {
-//     //create timeblock element
-//     const timeblock = `
-
-//     `;
-// }
